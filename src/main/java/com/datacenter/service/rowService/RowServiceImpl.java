@@ -7,8 +7,6 @@ import com.datacenter.da.repository.RowRepository;
 import com.datacenter.dto.RowDto;
 
 import com.datacenter.mapper.RowMapper;
-import com.datacenter.service.rowService.RowService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

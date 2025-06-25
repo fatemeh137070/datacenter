@@ -1,4 +1,3 @@
-// SwitchMapper.java
 package com.datacenter.mapper;
 
 import com.datacenter.da.entity.Switch;

@@ -1,4 +1,3 @@
-// PatchPanelMapper.java
 package com.datacenter.mapper;
 
 import com.datacenter.da.entity.PatchPanel;

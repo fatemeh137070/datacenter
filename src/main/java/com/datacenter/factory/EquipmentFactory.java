@@ -2,7 +2,6 @@ package com.datacenter.factory;
 
 import com.datacenter.da.entity.*;
 import com.datacenter.dto.*;
-import com.datacenter.service.enums.EquipmentType;
 import org.springframework.stereotype.Component;
 
 @Component

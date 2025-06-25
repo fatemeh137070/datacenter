@@ -7,7 +7,6 @@ import com.datacenter.da.repository.LocationRepository;
 public class LocationFactory {
 
     private LocationFactory() {
-        // جلوگیری از ساخت شیء
     }
 
     public static Location fromDto(LocationDto dto, LocationRepository repository) {

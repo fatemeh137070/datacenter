@@ -8,7 +8,6 @@ import com.datacenter.da.repository.EquipmentRepository;
 import com.datacenter.da.repository.RackRepository;
 import com.datacenter.dto.EquipmentPlacementDto;
 import com.datacenter.mapper.EquipmentPlacementMapper;
-import com.datacenter.service.equipmentPlacementService.EquipmentPlacementService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

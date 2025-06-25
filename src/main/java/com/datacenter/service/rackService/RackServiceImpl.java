@@ -6,7 +6,6 @@ import com.datacenter.da.repository.RackRepository;
 import com.datacenter.da.repository.RowRepository;
 import com.datacenter.dto.RackDto;
 import com.datacenter.mapper.RackMapper;
-import com.datacenter.service.rackService.RackService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
