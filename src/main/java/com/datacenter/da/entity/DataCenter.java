@@ -22,6 +22,8 @@ public class DataCenter {
     @OneToMany(mappedBy = "dataCenter")
     private List<Row> rows;
 
+
+
     public DataCenter() {
     }
 
