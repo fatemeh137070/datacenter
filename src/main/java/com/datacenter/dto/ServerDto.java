@@ -16,7 +16,6 @@ public class ServerDto extends EquipmentDto {
     }
 
     public ServerDto(Long id, String model, int sizeInUnits, int portCount, EquipmentType type, String cpu, Integer ramGb, Integer storageGb) {
-        super(id, model, sizeInUnits, portCount, type);
         this.cpu = cpu;
         this.ramGb = ramGb;
         this.storageGb = storageGb;

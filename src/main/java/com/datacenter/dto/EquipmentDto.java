@@ -1,6 +1,8 @@
 package com.datacenter.dto;
 
 import com.datacenter.service.enums.EquipmentType;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.Data;
 
 @Data
@@ -9,28 +11,29 @@ public class EquipmentDto {
     private String model;
     private int sizeInUnits;
     private int portCount;
-    private EquipmentType type; // ENUM
+    private String cpu;
+    private Integer ramGb;
+    private Integer storageGb;
+    @Enumerated(EnumType.STRING)
+    private EquipmentType type;
+
+    public EquipmentDto(EquipmentType type) {
+        this.type = type;
+    }
+
+    public EquipmentType getType() {
+        return type;
+    }
 
 
-
-    public EquipmentDto(Long id, String model, int sizeInUnits, int portCount, EquipmentType type, String cpu, Integer ramGb, Integer storageGb) {
+    public EquipmentDto(Long id, String model, int sizeInUnits, int portCount, String cpu, Integer ramGb, Integer storageGb) {
         this.id = id;
         this.model = model;
         this.sizeInUnits = sizeInUnits;
         this.portCount = portCount;
-        this.type = type;
-    }
-
-
-    public EquipmentDto() {
-    }
-
-    public EquipmentDto(Long id, String model, int sizeInUnits, int portCount, EquipmentType type) {
-        this.id = id;
-        this.model = model;
-        this.sizeInUnits = sizeInUnits;
-        this.portCount = portCount;
-        this.type = type;
+        this.cpu = cpu;
+        this.ramGb = ramGb;
+        this.storageGb = storageGb;
     }
 
     public Long getId() {
@@ -65,12 +68,34 @@ public class EquipmentDto {
         this.portCount = portCount;
     }
 
-    public EquipmentType getType() {
-        return type;
+    public String getCpu() {
+        return cpu;
+    }
+
+    public void setCpu(String cpu) {
+        this.cpu = cpu;
+    }
+
+    public Integer getRamGb() {
+        return ramGb;
+    }
+
+    public void setRamGb(Integer ramGb) {
+        this.ramGb = ramGb;
+    }
+
+    public Integer getStorageGb() {
+        return storageGb;
+    }
+
+    public void setStorageGb(Integer storageGb) {
+        this.storageGb = storageGb;
     }
 
     public void setType(EquipmentType type) {
         this.type = type;
     }
 
+    public EquipmentDto() {
+    }
 }

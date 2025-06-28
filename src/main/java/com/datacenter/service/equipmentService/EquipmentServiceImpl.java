@@ -2,6 +2,7 @@ package com.datacenter.service.equipmentService;
 
 
 import com.datacenter.da.entity.Equipment;
+import com.datacenter.da.entity.Port;
 import com.datacenter.da.repository.EquipmentRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,8 @@ public class EquipmentServiceImpl implements EquipmentService {
         return equipmentRepository.save(equipment);
     }
 
+
+
     @Override
     public Equipment update(Equipment equipment) {
         {
@@ -46,6 +49,15 @@ public class EquipmentServiceImpl implements EquipmentService {
             existing.setPorts(equipment.getPorts());
             existing.setType(equipment.getType());
             existing.setPortCount(equipment.getPortCount());
+
+            // مدیریت درست orphanRemoval
+            existing.getPorts().clear();
+            if (equipment.getPorts() != null) {
+                for (Port port : equipment.getPorts()) {
+                    port.setEquipment(existing); // 🔁 تنظیم دوباره سمت معکوس
+                }
+                existing.getPorts().addAll(equipment.getPorts());
+            }
             return equipmentRepository.save(existing);
 
         }
